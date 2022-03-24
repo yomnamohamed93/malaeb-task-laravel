@@ -28,9 +28,10 @@ class PitchesController extends Controller
         $end_time=Carbon::make($pitch->stadium->working_hours_end)->subMinutes($validated['slot_duration']);
         //calculate time slots between start & end time
         $slots = DateTimeService::calculateSlots($start_time, $end_time,30);
-//        dd($slots,$booked_intervals);
+        $valid_data=array_diff($slots,$booked_intervals);
+        
         return response()->json(['status'=> 200,'message'=> "success",
-            'data'=>array_diff($slots,$booked_intervals)],200
+            'data'=>$valid_data],200
         );
     }
 }

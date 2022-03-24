@@ -16,6 +16,7 @@ class BookingController extends Controller
     {
         $validated=$request->validated();
         $validated['end_time']= Carbon::make($validated['start_time'])->addMinutes($validated["slot_duration"]);
+        $validated=array_merge($validated,['start_time'=>Carbon::make($validated['start_time'])]);
 
         #------------the following validation part could be enhanced------------#
         //check if chosen time slot is valid
