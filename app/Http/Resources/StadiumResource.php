@@ -17,7 +17,9 @@ class StadiumResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
-            'slots' => $this->getSlots(45),
+            'opening_time' => date("g:i A", strtotime($this->working_hours_start)),
+            'closing_time' => date("g:i A", strtotime($this->working_hours_end)),
+            'pitches'=>PitchResource::collection($this->pitches),
         ];
     }
 }

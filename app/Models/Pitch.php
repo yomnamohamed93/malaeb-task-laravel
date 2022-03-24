@@ -2,18 +2,20 @@
 
 namespace App\Models;
 
-use Carbon\CarbonPeriod;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Pitch extends Model
 {
     public $timestamps = true;
 
-    public function stadium()
+    public function stadium(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        $this->belongsTo(Stadium::class);
+       return $this->belongsTo(Stadium::class);
     }
 
+    public function bookings(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Booking::class);
+    }
 
 }

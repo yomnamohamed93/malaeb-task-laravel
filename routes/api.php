@@ -18,6 +18,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::namespace('App\Http\Controllers\Api')->group(function (){
-    Route::get("list-available-slots","PitchesController@index");
+    Route::get("stadiums","StadiumController@index");
+    Route::get("stadiums/{stadium}","StadiumController@show");
+    Route::post("check-available-slots","PitchesController@checkAvailableSlots");
+    Route::post("book-pitch","BookingController@create");
+    Route::get("list-bookings","BookingController@index");
 });
 

@@ -17,10 +17,12 @@ class CreateBookingsTable extends Migration
             $table->id();
             $table->string("player_name");
             $table->string("player_phone");
+            $table->date("booking_date");
             $table->time("start_time");
-            $table->enum("slot_duration",[60,90]);
+            $table->time("end_time");
+            $table->integer("slot_duration");
             $table->foreignId('stadium_id')->constrained('stadiums')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('pitch_id')->constrained('stadiums')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('pitch_id')->constrained('pitches')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();
         });

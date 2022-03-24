@@ -1,0 +1,255 @@
+{
+	"info": {
+		"_postman_id": "508c985e-804e-48aa-bc84-612093d4857a",
+		"name": "Malaeb",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "List stadiums",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Language",
+						"value": "en",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/stadiums",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"stadiums"
+					]
+				},
+				"description": "this api return the list of all stored countries \ndata content: id, name,currency - url = http://travelx.site/api"
+			},
+			"response": []
+		},
+		{
+			"name": "Stadium details",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Language",
+						"value": "en",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/stadiums/2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"stadiums",
+						"2"
+					]
+				},
+				"description": "this api return the list of all stored countries \ndata content: id, name,currency - url = http://travelx.site/api"
+			},
+			"response": []
+		},
+		{
+			"name": "List bookings",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Language",
+						"value": "en",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/list-bookings",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"list-bookings"
+					]
+				},
+				"description": "this api return the list of all stored countries \ndata content: id, name,currency - url = http://travelx.site/api"
+			},
+			"response": []
+		},
+		{
+			"name": "Book pitch",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Language",
+						"value": "en",
+						"type": "text"
+					},
+					{
+						"key": "Yazy-Auth",
+						"value": "xJa5W0KZQWvTCUXo2P4guaM+Hh7Tk48EAUImuhMZAbo=:ZmVkY2JhOTg3NjU0MzIyMg==:d2Vi",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "player_phone",
+							"value": "1155990966",
+							"type": "text"
+						},
+						{
+							"key": "player_name",
+							"value": "Yomna Mohamed",
+							"type": "text"
+						},
+						{
+							"key": "start_time",
+							"value": "16:00",
+							"type": "text"
+						},
+						{
+							"key": "booking_date",
+							"value": "2022-03-25",
+							"type": "text"
+						},
+						{
+							"key": "slot_duration",
+							"value": "90",
+							"type": "text"
+						},
+						{
+							"key": "pitch_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "stadium_id",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/book-pitch",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"book-pitch"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List available slots",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Language",
+						"value": "en",
+						"type": "text"
+					},
+					{
+						"key": "Yazy-Auth",
+						"value": "xJa5W0KZQWvTCUXo2P4guaM+Hh7Tk48EAUImuhMZAbo=:ZmVkY2JhOTg3NjU0MzIyMg==:d2Vi",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "booking_date",
+							"value": "2022-03-25",
+							"type": "text"
+						},
+						{
+							"key": "slot_duration",
+							"value": "90",
+							"type": "text"
+						},
+						{
+							"key": "pitch_id",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/check-available-slots",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"check-available-slots"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
