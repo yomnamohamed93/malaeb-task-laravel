@@ -9,6 +9,10 @@ Laravel version "8".
  <pre> composer install </pre>
  <pre> cp .env.example .env </pre>
  <pre> php artisan key:generate </pre>
+ Run the migrations and seeding (**Please note to set database connection in .env file**)
+ <pre> php artisan migrate </pre>  
+  <pre> php artisan db:seed </pre>
+
 Start the local development server
 
    <pre> php artisan serve </pre>
