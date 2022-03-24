@@ -29,7 +29,7 @@ class PitchesController extends Controller
         //calculate time slots between start & end time
         $slots = DateTimeService::calculateSlots($start_time, $end_time,30);
         $valid_data=array_diff($slots,$booked_intervals);
-        
+
         return response()->json(['status'=> 200,'message'=> "success",
             'data'=>$valid_data],200
         );
